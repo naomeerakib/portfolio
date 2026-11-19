@@ -3,10 +3,10 @@ import { categoryRoutes, portfolioProjects } from '../data/portfolio';
 import { waveGalleryItems } from '../data/waveGallery';
 
 /*
- * Wave: the landing page. A full-screen slideshow with an invisible 4 x 4
- * hover grid (16 cells, one per slide). Clicking opens the slide's project.
+ * Wave: the landing page. A full-screen slideshow with an invisible 1 x 13
+ * hover grid (one strip per project). Clicking opens the slide's project.
  * The slides come from waveGalleryItems (src/app/data/waveGallery.ts):
- * add, remove or reorder them there. Keep it at 16 to fill the grid.
+ * add, remove or reorder them there.
  */
 
 const slides: Slide[] = waveGalleryItems.map((item) => {
@@ -21,5 +21,5 @@ const slides: Slide[] = waveGalleryItems.map((item) => {
 });
 
 export default function Wave() {
-  return <Slideshow slides={slides} cols={4} rows={4} />;
+  return <Slideshow slides={slides} cols={13} rows={1} />;
 }
