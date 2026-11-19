@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
-import { Menu, X } from 'lucide-react';
 import { getProjectsByCategory } from '../data/portfolio';
 
 export default function Navigation() {
@@ -15,23 +14,29 @@ export default function Navigation() {
 
   const closeMobileMenu = () => setIsMobileOpen(false);
 
-  return (
-    <nav className="fixed top-0 right-0 w-full z-50 px-4 py-5 md:px-[15px] md:py-[40px]">
-      <div className="flex items-center justify-between md:justify-end">
-        <Link to="/" className="nav-link md:hidden" onClick={closeMobileMenu}>
-          wave
-        </Link>
+  // Mobile menu: every page in order, a blank line between sections
+  const mobileGroups = [
+    designProjects.map((p) => ({ to: `/design/${p.slug}`, title: p.title })),
+    archiveProjects.map((p) => ({ to: `/archive/${p.slug}`, title: p.title })),
+    motionProjects.map((p) => ({ to: `/motion/${p.slug}`, title: p.title })),
+    [{ to: '/about', title: 'about' }],
+  ];
 
+  return (
+    <nav className="pointer-events-none fixed top-0 right-0 w-full z-50 px-4 py-5 md:px-[15px] md:py-[40px]">
+      <div className="flex items-center justify-end">
+        {/* Mobile: one "wave" menu with every project in order */}
         <button
           type="button"
-          className="md:hidden rounded-full border border-black/10 bg-white/90 p-2 backdrop-blur-sm"
+          className="nav-link pointer-events-auto md:hidden"
           onClick={() => setIsMobileOpen((open) => !open)}
-          aria-label={isMobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={isMobileOpen}
+          aria-label={isMobileOpen ? 'Close menu' : 'Open menu'}
         >
-          {isMobileOpen ? <X size={18} /> : <Menu size={18} />}
+          wave
         </button>
 
-        <ul className="hidden items-start gap-5 relative md:flex">
+        <ul className="pointer-events-auto hidden items-start gap-5 relative md:flex">
           <li>
             <Link
               to="/"
@@ -149,51 +154,23 @@ export default function Navigation() {
       </div>
 
       {isMobileOpen && (
-        <div className="mt-4 rounded-[2rem] border border-black/10 bg-white/95 p-5 shadow-[0_20px_60px_rgba(0,0,0,0.08)] backdrop-blur md:hidden">
-          <div className="grid gap-5">
-            <div className="space-y-3">
-              <Link to="/" className="nav-link block" onClick={closeMobileMenu}>
-                wave
-              </Link>
-              <Link to="/about" className="nav-link block" onClick={closeMobileMenu}>
-                about
-              </Link>
-            </div>
-
-            <div>
-              <p className="nav-section-title">design</p>
-              <div className="mt-2 grid gap-2">
-                {designProjects.map((project) => (
-                  <Link key={project.slug} to={`/design/${project.slug}`} className="dropdown-link block" onClick={closeMobileMenu}>
-                    {project.title}
-                  </Link>
+        <>
+          {/* Tap anywhere outside the list to close it */}
+          <div className="pointer-events-auto fixed inset-0 md:hidden" aria-hidden="true" onClick={closeMobileMenu} />
+          <div className="mobile-menu pointer-events-auto relative ml-auto mt-[14px] w-fit pb-2 pl-3 text-right md:hidden">
+            {mobileGroups.map((group, groupIndex) => (
+              <ul key={groupIndex} className={groupIndex > 0 ? 'mt-[1.3em]' : undefined}>
+                {group.map((item) => (
+                  <li key={item.to}>
+                    <Link to={item.to} className="dropdown-link mobile-link block whitespace-nowrap" onClick={closeMobileMenu}>
+                      {item.title}
+                    </Link>
+                  </li>
                 ))}
-              </div>
-            </div>
-
-            <div>
-              <p className="nav-section-title">archive</p>
-              <div className="mt-2 grid gap-2">
-                {archiveProjects.map((project) => (
-                  <Link key={project.slug} to={`/archive/${project.slug}`} className="dropdown-link block" onClick={closeMobileMenu}>
-                    {project.title}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <p className="nav-section-title">motion</p>
-              <div className="mt-2 grid gap-2">
-                {motionProjects.map((project) => (
-                  <Link key={project.slug} to={`/motion/${project.slug}`} className="dropdown-link block" onClick={closeMobileMenu}>
-                    {project.title}
-                  </Link>
-                ))}
-              </div>
-            </div>
+              </ul>
+            ))}
           </div>
-        </div>
+        </>
       )}
 
       <style>{`
@@ -220,6 +197,18 @@ export default function Navigation() {
 
         .dropdown-link:hover {
           color: #0066ff;
+        }
+
+        .mobile-link {
+          line-height: 1.3;
+        }
+
+        .mobile-menu {
+          background: #ffffff;
+        }
+
+        html[data-slide-theme='dark'] .mobile-menu {
+          background: #000000;
         }
 
         .nav-section-title {

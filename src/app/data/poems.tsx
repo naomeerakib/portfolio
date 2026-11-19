@@ -16,8 +16,13 @@ const B = (t: string, i = 0): Line => ({ t, i, bold: true });
 const P = (t: string): Line => ({ t, plain: true });
 
 function Poem({ lines, center = false }: { lines: Line[]; center?: boolean }) {
-  // Scale the text so the longest poem still fits the screen without scrolling
-  const fontSize = `min(15px, calc((100vh - 190px) / ${(lines.length * 1.3).toFixed(1)}))`;
+  // Scale the text so the poem fits the screen height, and on phones its widest line fits the width
+  // (width estimated at ~0.5em per character plus the line's indent)
+  const widestEm = Math.max(
+    ...lines.map((line) => (typeof line === 'string' ? line.length * 0.5 : line.t.length * 0.5 + (line.i ?? 0) + (line.gap?.em ?? 0))),
+    1,
+  );
+  const fontSize = `max(10px, min(15px, calc((100vh - 190px) / ${(lines.length * 1.3).toFixed(1)}), calc((100vw - 40px) / ${widestEm.toFixed(1)})))`;
   return (
     <div className={`max-h-full ${center ? 'text-center' : 'text-left'}`} style={{ fontSize, lineHeight: 1.3 }}>
       {lines.map((line, index) => {
@@ -28,7 +33,7 @@ function Poem({ lines, center = false }: { lines: Line[]; center?: boolean }) {
           paddingLeft: line.i ? `${line.i}em` : undefined,
           fontStyle: line.plain ? 'normal' : 'italic',
           fontWeight: line.bold ? 700 : 400,
-          whiteSpace: 'pre' as const,
+          whiteSpace: 'pre-wrap' as const,
         };
         if (line.gap) {
           const [before, after] = [line.gap.after, line.t.slice(line.gap.after.length)];

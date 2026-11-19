@@ -122,9 +122,11 @@ export default function Slideshow({ slides, cols, rows, emptyCaption = '', alway
   return (
     <main className="slideshow fixed inset-0 overflow-hidden bg-white text-[15px] text-[#1a1a1a]">
       {/* Header: name (navigation sits on the right) */}
-      <header className="pointer-events-none absolute left-[15px] top-[40px] z-20 hidden md:flex">
-        <p className="w-[150px] shrink-0">RAKIB,</p>
-        <p>Naomee</p>
+      <header className="absolute left-4 top-5 z-20 md:left-[15px] md:top-[40px]">
+        <Link to="/" className="flex text-inherit no-underline" aria-label="RAKIB, Naomee (wave)">
+          <span className="w-[72px] shrink-0 md:w-[150px]">RAKIB,</span>
+          <span>Naomee</span>
+        </Link>
       </header>
 
       {/* Slides: stacked in the same place; only the current one is visible */}
@@ -169,11 +171,13 @@ export default function Slideshow({ slides, cols, rows, emptyCaption = '', alway
         <p className="w-[72px] shrink-0 md:w-[150px]">
           {total > 0 ? `${pad(current + 1)}, ${pad(total)}` : ''}
         </p>
-        <p>{slide ? slide.caption : emptyCaption}</p>
+        <p className={meta ? 'max-w-[calc(56vw-88px)] md:max-w-none' : undefined}>
+          {slide ? slide.caption : emptyCaption}
+        </p>
       </footer>
 
       {meta && (
-        <p className="pointer-events-none absolute bottom-[20px] right-4 z-20 text-right md:bottom-[40px] md:right-[15px]">
+        <p className="pointer-events-none absolute bottom-[20px] right-4 z-20 max-w-[40vw] text-right md:max-w-none md:bottom-[40px] md:right-[15px]">
           {meta}
         </p>
       )}
