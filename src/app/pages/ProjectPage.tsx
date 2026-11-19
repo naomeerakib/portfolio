@@ -32,6 +32,13 @@ import suspended2 from '../../imports/3289165D-B493-4FAA-A08D-C38303F66193_1_105
 import suspended3 from '../../imports/16570A98-9510-4126-83AB-0E9B3C356F5A_1_105_c.jpeg';
 import suspended4 from '../../imports/29BBFF59-06CA-40AD-885C-253E047C3B19_1_105_c.jpeg';
 
+// Performing+Architecture images
+import performing1 from '../../imports/performing-architecture-01.jpg';
+import performing2 from '../../imports/performing-architecture-02.jpg';
+import performing3 from '../../imports/performing-architecture-03.jpg';
+import performing4 from '../../imports/performing-architecture-04.jpg';
+import performing5 from '../../imports/performing-architecture-05.jpg';
+
 // In Praise of Shadows images
 import shadows1 from '../../imports/in-praise-of-shadows-01.jpg';
 import shadows2 from '../../imports/in-praise-of-shadows-02.jpg';
@@ -144,6 +151,10 @@ const projectData: Record<string, {
   'suspended-noon': {
     title: 'suspended noon',
     images: [suspended1, suspended2, suspended3, suspended4]
+  },
+  'performing-architecture': {
+    title: 'performing+architecture',
+    images: [performing1, performing2, performing3, performing4, performing5]
   },
   'in-praise-of-shadows': {
     title: 'in praise of shadows',

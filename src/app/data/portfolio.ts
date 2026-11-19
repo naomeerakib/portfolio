@@ -64,8 +64,8 @@ export const portfolioProjects: PortfolioProject[] = [
     image: fireCover,
   },
   {
-    title: 'language/architecture',
-    slug: 'bhashar-merudondo',
+    title: 'performing+architecture',
+    slug: 'performing-architecture',
     category: 'design',
     blurb: 'A language-centered spatial investigation still being documented for the web archive.',
   },
