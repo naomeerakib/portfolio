@@ -199,16 +199,14 @@ export default function Navigation() {
           color: #0066ff;
         }
 
-        .mobile-link {
-          line-height: 1.3;
-        }
-
         .mobile-menu {
-          background: #ffffff;
+          background: transparent;
         }
 
-        html[data-slide-theme='dark'] .mobile-menu {
-          background: #000000;
+        .mobile-menu .mobile-link,
+        html[data-slide-theme='dark'] .mobile-menu .mobile-link {
+          line-height: 1.3;
+          color: #0000ff;
         }
 
         .nav-section-title {
