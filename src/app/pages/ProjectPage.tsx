@@ -172,7 +172,7 @@ const projectData: Record<string, {
   },
   'verticality': {
     title: 'verticality',
-    images: [vert3]
+    images: [vert2]
   },
   'suspended-noon': {
     title: 'suspended noon',
