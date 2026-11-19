@@ -172,7 +172,7 @@ const projectData: Record<string, {
   },
   'verticality': {
     title: 'verticality',
-    images: [vert1, vert2, vert3]
+    images: [vert3]
   },
   'suspended-noon': {
     title: 'suspended noon',
@@ -263,6 +263,7 @@ export default function ProjectPage() {
       slides={slides}
       cols={projectData[projectId]?.cols ?? Math.max(10, slides.length)}
       rows={1}
+      meta={portfolioProjects.find((p) => p.slug === projectId)?.meta}
       alwaysDark={
         projectData[projectId]?.alwaysDark ??
         ['archive', 'motion'].includes(portfolioProjects.find((p) => p.slug === projectId)?.category ?? '')

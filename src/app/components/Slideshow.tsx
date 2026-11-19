@@ -61,11 +61,13 @@ type SlideshowProps = {
   emptyCaption?: string;
   /** Always use the black page / blue text theme */
   alwaysDark?: boolean;
+  /** Text in the bottom-right corner, level with the caption (e.g. location, year) */
+  meta?: string;
 };
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
-export default function Slideshow({ slides, cols, rows, emptyCaption = '', alwaysDark = false }: SlideshowProps) {
+export default function Slideshow({ slides, cols, rows, emptyCaption = '', alwaysDark = false, meta }: SlideshowProps) {
   const [current, setCurrent] = useState(0);
   const [darkById, setDarkById] = useState<Record<string, boolean>>({});
   const touchStartX = useRef<number | null>(null);
@@ -169,6 +171,12 @@ export default function Slideshow({ slides, cols, rows, emptyCaption = '', alway
         </p>
         <p>{slide ? slide.caption : emptyCaption}</p>
       </footer>
+
+      {meta && (
+        <p className="pointer-events-none absolute bottom-[20px] right-4 z-20 text-right md:bottom-[40px] md:right-[15px]">
+          {meta}
+        </p>
+      )}
 
       {total > 0 && (
         <>

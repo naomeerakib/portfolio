@@ -15,6 +15,8 @@ export type PortfolioProject = {
   slug: string;
   category: ProjectCategory;
   year?: string;
+  /** Location and date shown bottom right on the project page */
+  meta?: string;
   blurb: string;
   image?: string;
 };
@@ -79,6 +81,7 @@ export const portfolioProjects: PortfolioProject[] = [
   {
     title: 'saltair',
     slug: 'saltair',
+    meta: 'méxico city and puerto escondido, 2025',
     category: 'archive',
     year: '2024',
     blurb: 'A photographic sequence attentive to residue, weather, and coastal drift.',
@@ -87,6 +90,7 @@ export const portfolioProjects: PortfolioProject[] = [
   {
     title: 'verticality',
     slug: 'verticality',
+    meta: 'sicily, 2024',
     category: 'archive',
     year: '2024',
     blurb: 'An image series tracing towers, posters, sky, and urban compression.',
@@ -95,30 +99,35 @@ export const portfolioProjects: PortfolioProject[] = [
   {
     title: 'suspended noon',
     slug: 'suspended-noon',
+    meta: 'berlin, 2024',
     category: 'archive',
     blurb: 'Fragments of midday stillness held in warm light and careful framing.',
   },
   {
     title: 'in praise of shadows',
     slug: 'in-praise-of-shadows',
+    meta: 'tokyo and osaka prefecture, 2026',
     category: 'archive',
     blurb: 'Notes from transit, displacement, and temporary forms of belonging.',
   },
   {
     title: 'tropic density',
     slug: 'tropic-density',
+    meta: 'são paulo and rio de janeiro, 2025',
     category: 'archive',
     blurb: 'A dense visual study of tropical materiality, color, and layered street life.',
   },
   {
     title: 'désiré',
     slug: 'desire',
+    meta: 'montréal, 2026',
     category: 'archive',
     blurb: 'A black and white photographic series.',
   },
   {
     title: 'ru(e) in berlin',
     slug: 'rue-in-berlin',
+    meta: 'berlin, 2025',
     category: 'archive',
     blurb: 'A photographic essay reading Berlin through facades, rhythm, and interruption.',
   },
