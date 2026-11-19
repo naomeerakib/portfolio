@@ -8,7 +8,7 @@ import blackbox from '../../imports/wave-blackbox.jpg';
 import fire from '../../imports/wave-fire.jpg';
 import performing from '../../imports/wave-performing.jpg';
 import saltair from '../../imports/IMG_6606.JPG';
-import verticality from '../../imports/montreal_mist_.jpg';
+import verticality from '../../imports/palestina_libera.jpg';
 import suspended from '../../imports/490B671A-4022-4A01-95FB-5C80C6D2B986_1_105_c.jpeg';
 import shadows from '../../imports/in-praise-of-shadows-01.jpg';
 import tropic from '../../imports/000003910033.jpg';
