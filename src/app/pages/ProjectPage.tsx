@@ -51,29 +51,11 @@ import tropic9 from '../../imports/15CA8635-89EF-443C-A30E-8D951B0A2658_1_105_c.
 import tropic10 from '../../imports/D8D3CAC1-5674-48FC-9AAF-DEB069C99BB3_1_105_c.jpeg';
 
 // Resonance Library images
-import resonance1 from '../../imports/ARCH405_20250112_RAKIB_PRESENTATION_Page_04.jpg';
-import resonance2 from '../../imports/ARCH405_20250112_RAKIB_PRESENTATION_Page_05.jpg';
-import resonance3 from '../../imports/ARCH405_20250112_RAKIB_PRESENTATION_Page_07.jpg';
-import resonance4 from '../../imports/ARCH405_20250112_RAKIB_PRESENTATION_Page_08.jpg';
-import resonance5 from '../../imports/ARCH405_20250112_RAKIB_PRESENTATION_Page_10.jpg';
-import resonance6 from '../../imports/ARCH405_20250112_RAKIB_PRESENTATION_Page_11.jpg';
-import resonance7 from '../../imports/ARCH405_20250112_RAKIB_PRESENTATION_Page_12.jpg';
-import resonance8 from '../../imports/ARCH405_20250112_RAKIB_PRESENTATION_Page_13.jpg';
-import resonance9 from '../../imports/ARCH405_20250112_RAKIB_PRESENTATION_Page_14.jpg';
-import resonance10 from '../../imports/ARCH405_20250112_RAKIB_PRESENTATION_Page_15.jpg';
-import resonance11 from '../../imports/ARCH405_20250112_RAKIB_PRESENTATION_Page_16.jpg';
-import resonance12 from '../../imports/ARCH405_20250112_RAKIB_PRESENTATION_Page_17.jpg';
-import resonance13 from '../../imports/ARCH405_20250112_RAKIB_PRESENTATION_Page_18.jpg';
-import resonance14 from '../../imports/ARCH405_20250112_RAKIB_PRESENTATION_Page_20.jpg';
-import resonance15 from '../../imports/ARCH405_20250112_RAKIB_PRESENTATION_Page_21.jpg';
-import resonance16 from '../../imports/ARCH405_20250112_RAKIB_PRESENTATION_Page_22.jpg';
-import resonance17 from '../../imports/ARCH405_20250112_RAKIB_PRESENTATION_Page_26.jpg';
-import resonance18 from '../../imports/ARCH405_20250112_RAKIB_PRESENTATION_Page_27.jpg';
-import resonance19 from '../../imports/ARCH405_20250112_RAKIB_PRESENTATION_Page_32.jpg';
-import resonance20 from '../../imports/ARCH405_20250112_RAKIB_PRESENTATION_Page_19.jpg';
-import resonance21 from '../../imports/ChatGPT_Image_Jan_14,_2026,_07_00_16_PM.png';
-import resonance22 from '../../imports/ChatGPT_Image_Jan_14,_2026,_07_07_06_PM.png';
-import resonance23 from '../../imports/ChatGPT_Image_Jan_14,_2026,_07_09_46_PM.png';
+import resonance1 from '../../imports/resonance-library-01.jpg';
+import resonance2 from '../../imports/resonance-library-02.jpg';
+import resonance3 from '../../imports/resonance-library-03.jpg';
+import resonance4 from '../../imports/resonance-library-04.jpg';
+import resonance5 from '../../imports/resonance-library-05.jpg';
 
 // Pamplemousse Magazine images
 import pample1 from '../../imports/0dac25b5c65400c1892208e0eb3e56cb_(1)0.png';
@@ -156,7 +138,7 @@ const projectData: Record<string, {
   },
   'resonance-library': {
     title: 'resonance library',
-    images: [resonance1, resonance2, resonance3, resonance4, resonance5, resonance6, resonance7, resonance8, resonance9, resonance10, resonance11, resonance12, resonance13, resonance14, resonance15, resonance16, resonance17, resonance18, resonance19, resonance20, resonance21, resonance22, resonance23]
+    images: [resonance1, resonance2, resonance3, resonance4, resonance5]
   },
   'pamplemousse-magazine': {
     title: 'pamplemousse magazine',
