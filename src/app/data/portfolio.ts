@@ -77,30 +77,6 @@ export const portfolioProjects: PortfolioProject[] = [
     blurb: 'A language-centered spatial investigation still being documented for the web archive.',
   },
   {
-    title: 'vinkhuizen-zuid urban redevelopment',
-    slug: 'vinkhuizen-zuid-urban-redevelopment',
-    category: 'design',
-    blurb: 'Urban redevelopment work centered on adaptation, public life, and future density.',
-  },
-  {
-    title: 'a world of one',
-    slug: 'a-world-of-one',
-    category: 'design',
-    blurb: 'A conceptual design study balancing solitude, fiction, and spatial narrative.',
-  },
-  {
-    title: 'wool-integrated clay tile',
-    slug: 'wool-integrated-clay-tile',
-    category: 'design',
-    blurb: 'A material research project linking craft, sustainability, and building performance.',
-  },
-  {
-    title: 'oddwave studio',
-    slug: 'oddwave-studio',
-    category: 'design',
-    blurb: 'Identity and space-building explorations for a practice in formation.',
-  },
-  {
     title: 'saltair',
     slug: 'saltair',
     category: 'archive',
@@ -141,34 +117,10 @@ export const portfolioProjects: PortfolioProject[] = [
     blurb: 'A black and white photographic series.',
   },
   {
-    title: 'held/spaces',
-    slug: 'heldspaces',
-    category: 'archive',
-    blurb: 'A quiet archive of rooms, edges, and the emotional afterlife of interiors.',
-  },
-  {
     title: 'ru(e) in berlin',
     slug: 'rue-in-berlin',
     category: 'archive',
     blurb: 'A photographic essay reading Berlin through facades, rhythm, and interruption.',
-  },
-  {
-    title: '26paris',
-    slug: '26paris',
-    category: 'archive',
-    blurb: 'Travel fragments and architectural observations collected in short sequences.',
-  },
-  {
-    title: 'roma norte',
-    slug: 'roma-norte',
-    category: 'archive',
-    blurb: 'A neighborhood study attentive to texture, memory, and daily choreography.',
-  },
-  {
-    title: 'guest appearances',
-    slug: 'guest-appearances',
-    category: 'archive',
-    blurb: 'Unplanned encounters, fleeting subjects, and the poetics of being briefly there.',
   },
   {
     title: "i'll see you when i see you",
