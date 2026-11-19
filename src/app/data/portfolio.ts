@@ -116,8 +116,8 @@ export const portfolioProjects: PortfolioProject[] = [
     blurb: 'Fragments of midday stillness held in warm light and careful framing.',
   },
   {
-    title: 'between homes',
-    slug: 'between-homes',
+    title: 'in praise of shadows',
+    slug: 'in-praise-of-shadows',
     category: 'archive',
     blurb: 'Notes from transit, displacement, and temporary forms of belonging.',
   },

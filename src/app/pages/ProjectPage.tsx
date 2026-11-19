@@ -32,6 +32,14 @@ import suspended2 from '../../imports/3289165D-B493-4FAA-A08D-C38303F66193_1_105
 import suspended3 from '../../imports/16570A98-9510-4126-83AB-0E9B3C356F5A_1_105_c.jpeg';
 import suspended4 from '../../imports/29BBFF59-06CA-40AD-885C-253E047C3B19_1_105_c.jpeg';
 
+// In Praise of Shadows images
+import shadows1 from '../../imports/in-praise-of-shadows-01.jpg';
+import shadows2 from '../../imports/in-praise-of-shadows-02.jpg';
+import shadows3 from '../../imports/in-praise-of-shadows-03.jpg';
+import shadows4 from '../../imports/in-praise-of-shadows-04.jpg';
+import shadows5 from '../../imports/in-praise-of-shadows-05.jpg';
+import shadows6 from '../../imports/in-praise-of-shadows-06.jpg';
+
 // Tropic Density images
 import tropicNew1 from '../../imports/000003910026.jpg';
 import tropicNew2 from '../../imports/000003910031.jpg';
@@ -136,6 +144,10 @@ const projectData: Record<string, {
   'suspended-noon': {
     title: 'suspended noon',
     images: [suspended1, suspended2, suspended3, suspended4]
+  },
+  'in-praise-of-shadows': {
+    title: 'in praise of shadows',
+    images: [shadows1, shadows2, shadows3, shadows4, shadows5, shadows6]
   },
   'tropic-density': {
     title: 'tropic density',
