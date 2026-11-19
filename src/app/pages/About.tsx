@@ -14,8 +14,7 @@ export default function About() {
 
         <div className="px-6 md:px-10 lg:px-16">
           <div
-            className="mx-auto max-w-[760px] space-y-3 text-center text-[15px] font-light leading-[1.45] text-black/72 md:text-[17px]"
-            style={{ fontFamily: 'Arial, sans-serif' }}
+            className="mx-auto max-w-[760px] space-y-3 text-center text-[15px] text-black/72 md:text-[17px]"
           >
             <p>
               Naomee Rakib is a multidisciplinary designer working across architecture, photography, and visual

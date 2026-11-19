@@ -1,0 +1,21 @@
+/*
+ * Site typeface: Times New Roman, regular (400) only.
+ *
+ * 'Site Times' first looks for the real Times New Roman installed on the
+ * visitor's device (Mac, iPhone, iPad, Windows). Where it isn't installed
+ * (most Android phones, Linux), it loads Liberation Serif, a free,
+ * metric-compatible equivalent with identical character widths
+ * (SIL Open Font License, see /public/fonts/LiberationSerif-LICENSE.txt).
+ * The file is only downloaded when Times New Roman is missing.
+ */
+@font-face {
+  font-family: 'Site Times';
+  src:
+    local('Times New Roman'),
+    local('TimesNewRomanPSMT'),
+    local('TimesNewRoman'),
+    url('/fonts/LiberationSerif-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}

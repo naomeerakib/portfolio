@@ -188,10 +188,10 @@ export default function ProjectPage() {
       <div className="min-h-screen" style={{ backgroundColor: 'white' }}>
         <div className="pt-32 px-8 pb-16">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-6xl font-light mb-4 hover-title" style={{ fontFamily: 'Arial, sans-serif', color: '#1a1a1a', letterSpacing: '-5px', transition: 'color 0.2s ease', textTransform: 'lowercase' }}>
+            <h1 className="text-6xl mb-4 hover-title" style={{ color: '#1a1a1a', transition: 'color 0.2s ease', textTransform: 'lowercase' }}>
               fire sanctuary
             </h1>
-            <p className="text-base mb-16" style={{ fontFamily: 'Arial, sans-serif', color: '#1a1a1a', fontWeight: 300 }}>
+            <p className="text-base mb-16" style={{ color: '#1a1a1a' }}>
               Dadia National Park, Greece
             </p>
 
@@ -201,7 +201,7 @@ export default function ProjectPage() {
               }
             `}</style>
 
-            <div className="space-y-8" style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px', lineHeight: '1.6', color: '#1a1a1a', fontWeight: 300 }}>
+            <div className="space-y-8" style={{ fontSize: '14px', color: '#1a1a1a' }}>
               <p>
                 The 2023 wildfire in Dadia National Park, northern Greece, consumed almost ninety thousand hectares of forest. This fire constituted the largest ever documented within the European Union. It resulted in a landscape that resembled not a location, but rather a body recuperating from profound stress. Raptors that had been here for generations forfeited their nesting habitats. Parts of the original woodland fell to ash. However, conservation organizations saw young Cinereous Vultures returning in a few months. Little plants started to emerge from the scorched ground. Slowly but steadily, signs of recovery emerged.
               </p>
@@ -228,8 +228,8 @@ export default function ProjectPage() {
               />
             </div>
 
-            <div className="space-y-8 mt-12" style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px', lineHeight: '1.6', color: '#1a1a1a', fontWeight: 300 }}>
-              <h2 className="text-2xl font-light mt-12 mb-6" style={{ fontFamily: 'Arial, sans-serif', color: '#1a1a1a', letterSpacing: '-2px', textTransform: 'lowercase' }}>
+            <div className="space-y-8 mt-12" style={{ fontSize: '14px', color: '#1a1a1a' }}>
+              <h2 className="text-2xl mt-12 mb-6" style={{ color: '#1a1a1a', textTransform: 'lowercase' }}>
                 process
               </h2>
 
@@ -251,7 +251,7 @@ export default function ProjectPage() {
               ))}
             </div>
 
-            <div className="mt-12 space-y-8" style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px', lineHeight: '1.6', color: '#1a1a1a', fontWeight: 300 }}>
+            <div className="mt-12 space-y-8" style={{ fontSize: '14px', color: '#1a1a1a' }}>
               <p>
                 After tracing the most heavily burned areas of Dadia National Park, I introduced a second layer of interpretation based on the methodology of the Liver of Piacenza. Rather than treating the traced fire scars as fixed shapes, I began to draw concentric circles around them, using each burned zone as a center. This process echoes the way the Liver of Piacenza organizes the body into radiating, symbolic fields rather than precise anatomical measurements.
               </p>
@@ -274,7 +274,7 @@ export default function ProjectPage() {
               ))}
             </div>
 
-            <div className="mt-12 space-y-8" style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px', lineHeight: '1.6', color: '#1a1a1a', fontWeight: 300 }}>
+            <div className="mt-12 space-y-8" style={{ fontSize: '14px', color: '#1a1a1a' }}>
               <p>
                 From the concentric field drawing, I began to identify areas where the pattern felt spatially stable and intentional rather than accidental. Within the overlapping circles, certain shapes emerged that suggested zones of pause, gathering, or protection. These were often areas that had originally appeared as negative space in the earlier tracing but now read as coherent figures once the concentric logic was applied.
               </p>
@@ -293,7 +293,7 @@ export default function ProjectPage() {
               />
             </div>
 
-            <div className="mt-12 space-y-8" style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px', lineHeight: '1.6', color: '#1a1a1a', fontWeight: 300 }}>
+            <div className="mt-12 space-y-8" style={{ fontSize: '14px', color: '#1a1a1a' }}>
               <p>
                 Once the outlines of the programmatic zones were established, I began to assign each shape a specific role within the Fire Sanctuary. Rather than starting from a predefined building type, I let the size, position, and relationship of each zone suggest its function. Some shapes felt suited for movement and transition, while others read as places of pause or protection. These intuitions guided the naming of the spaces, which became part of the design process rather than a final label applied afterward.
               </p>
@@ -323,7 +323,7 @@ export default function ProjectPage() {
               </p>
             </div>
 
-            <div className="mt-12 space-y-8" style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px', lineHeight: '1.6', color: '#1a1a1a', fontWeight: 300 }}>
+            <div className="mt-12 space-y-8" style={{ fontSize: '14px', color: '#1a1a1a' }}>
               <p>
                 Instead of starting with formal design, I started with a translation. I began by redrawing the Liver of Piacenza as a schematic, using it as a generating tool rather than an archeological relic. Its internal divisions, compartmental logic, and radial divisions piqued my curiosity about how they might be used to organize space symbolically rather than practically. The project&apos;s basis was laid by this first sketch. Instead of using a traditional architectural plan, the medical building would be organized using zones, thresholds, and directional pressures.
               </p>
@@ -338,7 +338,7 @@ export default function ProjectPage() {
               />
             </div>
 
-            <div className="mt-12 space-y-6" style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px', lineHeight: '1.6', color: '#1a1a1a', fontWeight: 300 }}>
+            <div className="mt-12 space-y-6" style={{ fontSize: '14px', color: '#1a1a1a' }}>
               <p>
                 The architectural forms didn&apos;t start to solidify until this spatial story was formed. The aviary towers appeared as vertical studies in later designs. One remained a more rectilinear prism, whereas the other became tapered and faceted. Both were perforated with tiny holes and divided by horizontal bands. These illustrations investigated how the towers might serve as observation points and shelters without becoming prominent landmarks. Rather than being enormous structures, they were intended to be instruments within the landscape.
               </p>
@@ -357,7 +357,7 @@ export default function ProjectPage() {
               />
             </div>
 
-            <div className="mt-8 space-y-4" style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px', lineHeight: '1.6', color: '#1a1a1a', fontWeight: 300 }}>
+            <div className="mt-8 space-y-4" style={{ fontSize: '14px', color: '#1a1a1a' }}>
               <p>
                 <strong>1. Aviary Towers at Twilight</strong>
               </p>
@@ -376,7 +376,7 @@ export default function ProjectPage() {
               />
             </div>
 
-            <div className="mt-8 space-y-4" style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px', lineHeight: '1.6', color: '#1a1a1a', fontWeight: 300 }}>
+            <div className="mt-8 space-y-4" style={{ fontSize: '14px', color: '#1a1a1a' }}>
               <p>
                 <strong>2. Seed Platform and Mist Garden at Night</strong>
               </p>
@@ -395,7 +395,7 @@ export default function ProjectPage() {
               />
             </div>
 
-            <div className="mt-8 space-y-4" style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px', lineHeight: '1.6', color: '#1a1a1a', fontWeight: 300 }}>
+            <div className="mt-8 space-y-4" style={{ fontSize: '14px', color: '#1a1a1a' }}>
               <p>
                 <strong>3. Threshold of Ashes and Hall of Remembering Fire in the Morning</strong>
               </p>
@@ -405,7 +405,7 @@ export default function ProjectPage() {
               </p>
             </div>
 
-            <div className="mt-12 space-y-6" style={{ fontFamily: 'Arial, sans-serif', fontSize: '14px', lineHeight: '1.6', color: '#1a1a1a', fontWeight: 300 }}>
+            <div className="mt-12 space-y-6" style={{ fontSize: '14px', color: '#1a1a1a' }}>
               <p>
                 <strong>Final Reflection</strong>
               </p>
@@ -436,7 +436,7 @@ export default function ProjectPage() {
     return (
       <div className="min-h-screen" style={{ backgroundColor: 'white' }}>
         <div className="pt-32 px-8">
-          <h1 className="text-6xl font-light mb-12 hover-title" style={{ fontFamily: 'Arial, sans-serif', color: '#1a1a1a', letterSpacing: '-5px', transition: 'color 0.2s ease', textTransform: 'lowercase' }}>
+          <h1 className="text-6xl mb-12 hover-title" style={{ color: '#1a1a1a', transition: 'color 0.2s ease', textTransform: 'lowercase' }}>
             {title}
           </h1>
         </div>
@@ -470,12 +470,10 @@ export default function ProjectPage() {
           }
 
           .overlay-text {
-            font-family: Arial, sans-serif;
             font-size: 12pt;
             color: white;
             text-align: left;
             margin: 0;
-            letter-spacing: 0;
           }
         `}</style>
 
@@ -537,7 +535,7 @@ export default function ProjectPage() {
     return (
       <div className="min-h-screen" style={{ backgroundColor: 'white' }}>
         <div className="pt-32 px-8 pb-16">
-          <h1 className="text-6xl font-light mb-12 hover-title" style={{ fontFamily: 'Arial, sans-serif', color: '#1a1a1a', letterSpacing: '-5px', transition: 'color 0.2s ease', textTransform: 'lowercase' }}>
+          <h1 className="text-6xl mb-12 hover-title" style={{ color: '#1a1a1a', transition: 'color 0.2s ease', textTransform: 'lowercase' }}>
             {title}
           </h1>
 
@@ -567,7 +565,7 @@ export default function ProjectPage() {
     return (
       <div className="min-h-screen" style={{ backgroundColor: 'white' }}>
         <div className="pt-32 px-8">
-          <h1 className="text-6xl font-light mb-12 hover-title" style={{ fontFamily: 'Arial, sans-serif', color: '#1a1a1a', letterSpacing: '-5px', transition: 'color 0.2s ease', textTransform: 'lowercase' }}>
+          <h1 className="text-6xl mb-12 hover-title" style={{ color: '#1a1a1a', transition: 'color 0.2s ease', textTransform: 'lowercase' }}>
             {title}
           </h1>
         </div>
@@ -592,7 +590,7 @@ export default function ProjectPage() {
             ))}
 
             <div className="px-8 py-12">
-              <h2 className="text-4xl font-light hover-title" style={{ fontFamily: 'Arial, sans-serif', color: '#1a1a1a', letterSpacing: '-5px', transition: 'color 0.2s ease', textTransform: 'lowercase' }}>
+              <h2 className="text-4xl hover-title" style={{ color: '#1a1a1a', transition: 'color 0.2s ease', textTransform: 'lowercase' }}>
                 site analysis
               </h2>
             </div>
@@ -609,7 +607,7 @@ export default function ProjectPage() {
             ))}
 
             <div className="px-8 py-12">
-              <h2 className="text-4xl font-light hover-title" style={{ fontFamily: 'Arial, sans-serif', color: '#1a1a1a', letterSpacing: '-5px', transition: 'color 0.2s ease', textTransform: 'lowercase' }}>
+              <h2 className="text-4xl hover-title" style={{ color: '#1a1a1a', transition: 'color 0.2s ease', textTransform: 'lowercase' }}>
                 form + function
               </h2>
             </div>
@@ -647,7 +645,7 @@ export default function ProjectPage() {
     return (
       <div className="min-h-screen" style={{ backgroundColor: 'black' }}>
         <div className="pt-32 px-8 pb-16">
-          <h1 className="text-6xl font-light mb-12 hover-title" style={{ fontFamily: 'Arial, sans-serif', color: 'white', letterSpacing: '-5px', transition: 'color 0.2s ease', textTransform: 'lowercase' }}>
+          <h1 className="text-6xl mb-12 hover-title" style={{ color: 'white', transition: 'color 0.2s ease', textTransform: 'lowercase' }}>
             {title}
           </h1>
 
@@ -693,7 +691,6 @@ export default function ProjectPage() {
               display: flex;
               align-items: center;
               justify-content: center;
-              font-family: Arial, sans-serif;
               color: black;
               transition: background-color 0.2s ease;
             }
@@ -753,7 +750,7 @@ export default function ProjectPage() {
 
         <div style={{ position: 'relative', zIndex: 1 }}>
           <div className="pt-32 px-8">
-            <h1 className="text-6xl font-light mb-12 hover-title" style={{ fontFamily: 'Arial, sans-serif', color: '#1a1a1a', letterSpacing: '-5px', transition: 'color 0.2s ease', textTransform: 'lowercase' }}>
+            <h1 className="text-6xl mb-12 hover-title" style={{ color: '#1a1a1a', transition: 'color 0.2s ease', textTransform: 'lowercase' }}>
               {title}
             </h1>
           </div>
@@ -794,7 +791,7 @@ export default function ProjectPage() {
       } : { backgroundColor: 'white' }}
     >
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-6xl font-light mb-12 hover-title" style={{ fontFamily: 'Arial, sans-serif', color: background ? 'white' : '#1a1a1a', letterSpacing: '-5px', transition: 'color 0.2s ease', textTransform: 'lowercase' }}>
+        <h1 className="text-6xl mb-12 hover-title" style={{ color: background ? 'white' : '#1a1a1a', transition: 'color 0.2s ease', textTransform: 'lowercase' }}>
           {title}
         </h1>
 
@@ -827,12 +824,10 @@ export default function ProjectPage() {
           }
 
           .overlay-text {
-            font-family: Arial, sans-serif;
             font-size: 12pt;
             color: white;
             text-align: left;
             margin: 0;
-            letter-spacing: 0;
           }
         `}</style>
 

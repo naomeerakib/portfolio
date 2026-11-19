@@ -198,10 +198,7 @@ export default function Navigation() {
 
       <style>{`
         .nav-link {
-          font-family: Arial, sans-serif;
-          font-weight: 300;
           font-size: 15px;
-          letter-spacing: 0.02em;
           color: #1a1a1a;
           text-decoration: none;
           transition: color 0.2s ease;
@@ -213,10 +210,7 @@ export default function Navigation() {
         }
 
         .dropdown-link {
-          font-family: Arial, sans-serif;
-          font-weight: 300;
           font-size: 15px;
-          letter-spacing: 0.01em;
           line-height: 1.1;
           color: #2a2a2a;
           text-decoration: none;
@@ -229,10 +223,7 @@ export default function Navigation() {
         }
 
         .nav-section-title {
-          font-family: Arial, sans-serif;
-          font-weight: 300;
           font-size: 12px;
-          letter-spacing: 0.12em;
           text-transform: uppercase;
           color: rgba(26, 26, 26, 0.45);
         }

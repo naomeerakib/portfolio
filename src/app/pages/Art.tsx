@@ -4,7 +4,7 @@ export default function Art() {
   return (
     <main className="min-h-screen bg-white px-6 pb-24 pt-32 text-[#111111] md:px-10 md:pt-40 lg:px-16">
       <div className="max-w-[1600px]">
-        <p className="text-[11px] uppercase tracking-[0.24em] text-black/42">art</p>
+        <p className="text-[11px] uppercase text-black/42">art</p>
 
         <div className="mt-14 grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 lg:grid-cols-12 lg:gap-x-10 lg:gap-y-20">
           {artWorks.map((work, index) => (
