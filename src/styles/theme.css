@@ -2,8 +2,8 @@
 
 :root {
   /* ---- Typography: the one place to change the site's type ---- */
-  --font-site: 'Site Serif', 'Site Times', 'Times New Roman', Times, serif;
-  --tracking-body: 0.01em;  /* matches the reference's set width */
+  --font-site: Helvetica, 'Helvetica Neue', Arial, sans-serif;
+  --tracking-body: normal;
   --leading-body: 1.3;      /* compact, print-like, still readable */
   --leading-heading: 1.05;
   --font-size: 16px;
