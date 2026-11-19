@@ -139,7 +139,7 @@ const projectData: Record<string, {
   },
   'tropic-density': {
     title: 'tropic density',
-    images: [tropicNew3, tropicNew4, tropicNew1, tropicNew5, tropicNew6, tropic1, tropic2, tropic3, tropic4, tropic5]
+    images: [tropicNew3, tropicNew4, tropicNew1, tropicNew5, tropicNew6, tropic1, tropic2, tropic3, tropic4, tropic5, tropic6, tropic7, tropic8, tropic9, tropic10]
   },
   'resonance-library': {
     title: 'resonance library',
