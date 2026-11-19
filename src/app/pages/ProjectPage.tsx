@@ -66,6 +66,10 @@ import pample5 from '../../imports/0dac25b5c65400c1892208e0eb3e56cb_(1)2.png';
 import pample6 from '../../imports/0dac25b5c65400c1892208e0eb3e56cb_(1).png';
 
 // Blackbox Gallery images
+import blackboxNew1 from '../../imports/blackbox-gallery-01.jpg';
+import blackboxNew2 from '../../imports/blackbox-gallery-02.jpg';
+import blackboxNew3 from '../../imports/blackbox-gallery-03.jpg';
+import blackboxNew4 from '../../imports/blackbox-gallery-04.jpg';
 import blackbox1 from '../../imports/ARCH303_04UrbanArtGallery_JM_Gauthier_Hou_Rakib_Page_02.jpg';
 import blackbox2 from '../../imports/ARCH303_04UrbanArtGallery_JM_Gauthier_Hou_Rakib_Page_03.jpg';
 import blackbox3 from '../../imports/ARCH303_04UrbanArtGallery_JM_Gauthier_Hou_Rakib_Page_04.jpg';
@@ -104,7 +108,8 @@ import fireThresholdMorning from '../../imports/fire-sanctuary-threshold-morning
 /*
  * Project pages: a full-screen, no-scroll slideshow with 10 invisible
  * vertical hover strips (same as moynihanben.com). Each project shows the
- * first 10 images of its list below; edit a list to change what appears.
+ * images in its list below, in order; edit a list to change what appears.
+ * A project with more than 10 images gets one strip per image.
  * The previous long-form layouts (with all the written text) are kept in
  * ProjectPageOld.tsx for reference. That file is not used by the site.
  */
@@ -134,7 +139,7 @@ const projectData: Record<string, {
   },
   'tropic-density': {
     title: 'tropic density',
-    images: [tropicNew3, tropicNew4, tropicNew1, tropicNew5, tropicNew6, tropic1, tropic2, tropic3, tropic4, tropic5, tropic6, tropic7, tropic8, tropic9, tropic10]
+    images: [tropicNew3, tropicNew4, tropicNew1, tropicNew5, tropicNew6, tropic1, tropic2, tropic3, tropic4, tropic5]
   },
   'resonance-library': {
     title: 'resonance library',
@@ -146,7 +151,7 @@ const projectData: Record<string, {
   },
   'blackbox-gallery': {
     title: 'blackbox gallery',
-    images: [blackbox1, blackbox2, blackbox3, blackbox4, blackbox5, blackbox6, blackbox7, blackbox8, blackbox9, blackbox10, blackbox11, blackbox12, blackbox13, blackbox14, blackbox15, blackbox16, blackbox17, blackbox18, blackbox19, blackbox20, blackbox21],
+    images: [blackbox1, blackbox2, blackbox3, blackbox4, blackbox5, blackbox6, blackbox7, blackbox8, blackbox9, blackbox10, blackboxNew1, blackboxNew2, blackboxNew3, blackboxNew4],
     background: blackbox16
   },
   'fire-sanctuary': {
@@ -165,7 +170,7 @@ export default function ProjectPage() {
 
   const slides = useMemo<Slide[]>(
     () =>
-      (projectData[projectId]?.images ?? []).slice(0, 10).map((src, index) => ({
+      (projectData[projectId]?.images ?? []).map((src, index) => ({
         id: `${projectId}-${index}`,
         src,
         alt: `${title}, image ${index + 1}`,
@@ -178,7 +183,7 @@ export default function ProjectPage() {
     <Slideshow
       key={projectId}
       slides={slides}
-      cols={10}
+      cols={Math.max(10, slides.length)}
       rows={1}
       emptyCaption={`${title} (images coming soon)`}
     />
