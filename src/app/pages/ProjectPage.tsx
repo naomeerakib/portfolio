@@ -115,6 +115,8 @@ import blackbox20 from '../../imports/ChatGPT_Image_Jan_14,_2026,_06_42_32_PM-1.
 import blackbox21 from '../../imports/ChatGPT_Image_Jan_14,_2026,_06_44_19_PM-1.png';
 
 // Fire Sanctuary images
+import fireNew1 from '../../imports/fire-sanctuary-new-01.jpg';
+import fireNew2 from '../../imports/fire-sanctuary-new-02.jpg';
 import fire1 from '../../imports/Screenshot_2025-12-12_221718.png';
 import fire2 from '../../imports/Screenshot_2025-12-12_224410.png';
 import fire3 from '../../imports/Screenshot_2025-12-12_224639.png';
@@ -137,9 +139,13 @@ import fireThresholdMorning from '../../imports/fire-sanctuary-threshold-morning
  */
 
 // Project data structure
+// An image is either a file, or { src, scale } to show it smaller (0.75 = 75%)
+type ProjectImage = string | { src: string; scale: number };
+const at75 = (src: string): ProjectImage => ({ src, scale: 0.75 });
+
 const projectData: Record<string, {
   title: string;
-  images: string[];
+  images: ProjectImage[];
   background?: string;
 }> = {
   'rue-in-berlin': {
@@ -190,7 +196,7 @@ const projectData: Record<string, {
   },
   'fire-sanctuary': {
     title: 'fire sanctuary',
-    images: [fireAviaryTwilight, fireSeedPlatformNight, fireThresholdMorning, fire1, fire2, fire3, fire4, fire5, fire6, fireSketch]
+    images: [at75(fire2), at75(fire3), at75(fire4), at75(fire5), at75(fire6), fireNew1, fireNew2]
   },
 };
 
@@ -204,9 +210,10 @@ export default function ProjectPage() {
 
   const slides = useMemo<Slide[]>(
     () =>
-      (projectData[projectId]?.images ?? []).map((src, index) => ({
+      (projectData[projectId]?.images ?? []).map((image, index) => ({
         id: `${projectId}-${index}`,
-        src,
+        src: typeof image === 'string' ? image : image.src,
+        scale: typeof image === 'string' ? undefined : image.scale,
         alt: `${title}, image ${index + 1}`,
         caption: title,
       })),

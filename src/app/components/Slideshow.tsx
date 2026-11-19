@@ -17,6 +17,8 @@ export type Slide = {
   alt: string;
   caption: string;
   href?: string;
+  /** Optional display size relative to the full frame, e.g. 0.75 = 75% */
+  scale?: number;
 };
 
 type SlideshowProps = {
@@ -78,6 +80,7 @@ export default function Slideshow({ slides, cols, rows, emptyCaption = '' }: Sli
               decoding="async"
               fetchPriority={index === 0 ? 'high' : 'auto'}
               aria-hidden={index !== current}
+              style={item.scale && item.scale !== 1 ? { transform: `scale(${item.scale})` } : undefined}
               className={`absolute inset-0 h-full w-full object-contain ${
                 index === current ? 'opacity-100' : 'opacity-0'
               }`}
