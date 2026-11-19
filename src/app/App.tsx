@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router';
 import Navigation from './components/Navigation';
-import Wave from './pages/Wave';
+import Home from './pages/Home';
 import ProjectPage from './pages/ProjectPage';
 import About from './pages/About';
 
@@ -11,7 +11,7 @@ export default function App() {
         <Navigation />
 
         <Routes>
-          <Route path="/" element={<Wave />} />
+          <Route path="/" element={<Home />} />
           <Route path="/design/:projectId" element={<ProjectPage />} />
           <Route path="/archive/:projectId" element={<ProjectPage />} />
           <Route path="/photo" element={<Navigate to="/" replace />} />
