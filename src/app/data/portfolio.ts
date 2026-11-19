@@ -101,12 +101,6 @@ export const portfolioProjects: PortfolioProject[] = [
     blurb: 'Identity and space-building explorations for a practice in formation.',
   },
   {
-    title: 'désiré',
-    slug: 'desire',
-    category: 'archive',
-    blurb: 'A black and white photographic series.',
-  },
-  {
     title: 'saltair',
     slug: 'saltair',
     category: 'archive',
@@ -139,6 +133,12 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: 'tropic-density',
     category: 'archive',
     blurb: 'A dense visual study of tropical materiality, color, and layered street life.',
+  },
+  {
+    title: 'désiré',
+    slug: 'desire',
+    category: 'archive',
+    blurb: 'A black and white photographic series.',
   },
   {
     title: 'held/spaces',
