@@ -239,3 +239,19 @@
     line-height: var(--leading-body);
   }
 }
+
+/*
+ * Slideshow colour themes. While a slide with a black background is showing,
+ * the page turns black and all text turns blue.
+ */
+html[data-slide-theme='dark'] body,
+html[data-slide-theme='dark'] .slideshow {
+  background-color: #000000;
+}
+
+html[data-slide-theme='dark'] .slideshow,
+html[data-slide-theme='dark'] .nav-link,
+html[data-slide-theme='dark'] .dropdown-link,
+html[data-slide-theme='dark'] .nav-section-title {
+  color: #0000ff;
+}

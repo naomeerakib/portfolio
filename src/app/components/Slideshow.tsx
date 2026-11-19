@@ -9,7 +9,36 @@ import { Link, useNavigate } from 'react-router';
  *    link (if it has one). Arrow keys and Tab also move between slides.
  *    If there are fewer slides than cells, neighbouring cells share a slide.
  *  - Mobile: swipe left/right to change slide, tap to open its link.
+ *  - Images with a black background (detected from their outer edge as they
+ *    load) switch the whole page to black with #0000ff text while showing.
+ *    Theme colours live in theme.css (search for data-slide-theme).
  */
+
+// Average brightness (0-255) of an image's outer edge, below which it counts as black
+const DARK_EDGE_THRESHOLD = 30;
+
+function hasBlackBackground(img: HTMLImageElement) {
+  const size = 64;
+  const canvas = document.createElement('canvas');
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return false;
+  ctx.drawImage(img, 0, 0, size, size);
+  const { data } = ctx.getImageData(0, 0, size, size);
+  let sum = 0;
+  let count = 0;
+  for (let y = 0; y < size; y++) {
+    for (let x = 0; x < size; x++) {
+      const onEdge = x < 2 || y < 2 || x >= size - 2 || y >= size - 2;
+      if (!onEdge) continue;
+      const i = (y * size + x) * 4;
+      sum += 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2];
+      count++;
+    }
+  }
+  return sum / count < DARK_EDGE_THRESHOLD;
+}
 
 export type Slide = {
   id: string;
@@ -19,6 +48,8 @@ export type Slide = {
   href?: string;
   /** Optional display size relative to the full frame, e.g. 0.75 = 75% */
   scale?: number;
+  /** Force the black page theme on (true) or off (false); detected automatically if omitted */
+  dark?: boolean;
 };
 
 type SlideshowProps = {
@@ -32,6 +63,7 @@ const pad = (n: number) => String(n).padStart(2, '0');
 
 export default function Slideshow({ slides, cols, rows, emptyCaption = '' }: SlideshowProps) {
   const [current, setCurrent] = useState(0);
+  const [darkById, setDarkById] = useState<Record<string, boolean>>({});
   const touchStartX = useRef<number | null>(null);
   const swiped = useRef(false);
   const navigate = useNavigate();
@@ -58,10 +90,31 @@ export default function Slideshow({ slides, cols, rows, emptyCaption = '' }: Sli
   }, [step]);
 
   const slide = slides[Math.min(current, total - 1)];
+  const isDark = slide ? (slide.dark ?? darkById[slide.id] ?? false) : false;
+
+  // Tell the whole page (including the navigation) which theme to use
+  useEffect(() => {
+    document.documentElement.dataset.slideTheme = isDark ? 'dark' : 'light';
+  }, [isDark]);
+  useEffect(
+    () => () => {
+      delete document.documentElement.dataset.slideTheme;
+    },
+    [],
+  );
+
+  const detectBackground = (id: string, img: HTMLImageElement) => {
+    try {
+      const dark = hasBlackBackground(img);
+      setDarkById((prev) => (prev[id] === dark ? prev : { ...prev, [id]: dark }));
+    } catch {
+      // If the image can't be read, keep the default (light) theme
+    }
+  };
   const slideForCell = (cell: number) => Math.min(total - 1, Math.floor((cell * total) / cells));
 
   return (
-    <main className="fixed inset-0 overflow-hidden bg-white text-[15px] text-[#1a1a1a]">
+    <main className="slideshow fixed inset-0 overflow-hidden bg-white text-[15px] text-[#1a1a1a]">
       {/* Header: name (navigation sits on the right) */}
       <header className="pointer-events-none absolute left-[15px] top-[40px] z-20 hidden md:flex">
         <p className="w-[150px] shrink-0">RAKIB,</p>
@@ -80,6 +133,7 @@ export default function Slideshow({ slides, cols, rows, emptyCaption = '' }: Sli
               decoding="async"
               fetchPriority={index === 0 ? 'high' : 'auto'}
               aria-hidden={index !== current}
+              onLoad={(event) => detectBackground(item.id, event.currentTarget)}
               style={item.scale && item.scale !== 1 ? { transform: `scale(${item.scale})` } : undefined}
               className={`absolute inset-0 h-full w-full object-contain ${
                 index === current ? 'opacity-100' : 'opacity-0'
