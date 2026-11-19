@@ -33,6 +33,13 @@ export const categoryLabels: Record<ProjectCategory, string> = {
 
 export const portfolioProjects: PortfolioProject[] = [
   {
+    title: 'jingumae gate',
+    slug: 'jingumae-gate',
+    category: 'design',
+    year: '2026',
+    blurb: 'A descending inhabited canopy on Aoyama-dori, reimagining an office tower as housing and a public forest.',
+  },
+  {
     title: 'resonance library',
     slug: 'resonance-library',
     category: 'design',

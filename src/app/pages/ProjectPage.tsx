@@ -32,6 +32,13 @@ import suspended2 from '../../imports/3289165D-B493-4FAA-A08D-C38303F66193_1_105
 import suspended3 from '../../imports/16570A98-9510-4126-83AB-0E9B3C356F5A_1_105_c.jpeg';
 import suspended4 from '../../imports/29BBFF59-06CA-40AD-885C-253E047C3B19_1_105_c.jpeg';
 
+// Jingumae Gate images
+import jingumae1 from '../../imports/jingumae-gate-01.jpg';
+import jingumae2 from '../../imports/jingumae-gate-02.jpg';
+import jingumae3 from '../../imports/jingumae-gate-03.jpg';
+import jingumae4 from '../../imports/jingumae-gate-04.jpg';
+import jingumae5 from '../../imports/jingumae-gate-05.jpg';
+
 // Performing+Architecture images
 import performing1 from '../../imports/performing-architecture-01.jpg';
 import performing2 from '../../imports/performing-architecture-02.jpg';
@@ -151,6 +158,10 @@ const projectData: Record<string, {
   'suspended-noon': {
     title: 'suspended noon',
     images: [suspended1, suspended2, suspended3, suspended4]
+  },
+  'jingumae-gate': {
+    title: 'jingumae gate',
+    images: [jingumae1, jingumae2, jingumae3, jingumae4, jingumae5]
   },
   'performing-architecture': {
     title: 'performing+architecture',
