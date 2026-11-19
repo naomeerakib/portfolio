@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import { Link, useNavigate } from 'react-router';
 
 /*
@@ -42,8 +42,10 @@ function hasBlackBackground(img: HTMLImageElement) {
 
 export type Slide = {
   id: string;
-  src: string;
-  alt: string;
+  /** An image slide has src + alt; a text slide has content instead */
+  src?: string;
+  alt?: string;
+  content?: ReactNode;
   caption: string;
   href?: string;
   /** Optional display size relative to the full frame, e.g. 0.75 = 75% */
@@ -57,11 +59,13 @@ type SlideshowProps = {
   cols: number;
   rows: number;
   emptyCaption?: string;
+  /** Always use the black page / blue text theme */
+  alwaysDark?: boolean;
 };
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
-export default function Slideshow({ slides, cols, rows, emptyCaption = '' }: SlideshowProps) {
+export default function Slideshow({ slides, cols, rows, emptyCaption = '', alwaysDark = false }: SlideshowProps) {
   const [current, setCurrent] = useState(0);
   const [darkById, setDarkById] = useState<Record<string, boolean>>({});
   const touchStartX = useRef<number | null>(null);
@@ -90,7 +94,7 @@ export default function Slideshow({ slides, cols, rows, emptyCaption = '' }: Sli
   }, [step]);
 
   const slide = slides[Math.min(current, total - 1)];
-  const isDark = slide ? (slide.dark ?? darkById[slide.id] ?? false) : false;
+  const isDark = alwaysDark || (slide ? (slide.dark ?? darkById[slide.id] ?? false) : false);
 
   // Tell the whole page (including the navigation) which theme to use
   useEffect(() => {
@@ -124,22 +128,34 @@ export default function Slideshow({ slides, cols, rows, emptyCaption = '' }: Sli
       {/* Slides: stacked in the same place; only the current one is visible */}
       <div className="absolute inset-0 px-4 pb-[64px] pt-[72px] md:px-[50px] md:pb-[84px] md:pt-[84px]">
         <div className="relative h-full w-full">
-          {slides.map((item, index) => (
-            <img
-              key={item.id}
-              src={item.src}
-              alt={item.alt}
-              loading="eager"
-              decoding="async"
-              fetchPriority={index === 0 ? 'high' : 'auto'}
-              aria-hidden={index !== current}
-              onLoad={(event) => detectBackground(item.id, event.currentTarget)}
-              style={item.scale && item.scale !== 1 ? { transform: `scale(${item.scale})` } : undefined}
-              className={`absolute inset-0 h-full w-full object-contain ${
-                index === current ? 'opacity-100' : 'opacity-0'
-              }`}
-            />
-          ))}
+          {slides.map((item, index) =>
+            item.content ? (
+              <div
+                key={item.id}
+                aria-hidden={index !== current}
+                className={`absolute inset-0 flex items-center justify-center ${
+                  index === current ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                {item.content}
+              </div>
+            ) : (
+              <img
+                key={item.id}
+                src={item.src}
+                alt={item.alt}
+                loading="eager"
+                decoding="async"
+                fetchPriority={index === 0 ? 'high' : 'auto'}
+                aria-hidden={index !== current}
+                onLoad={(event) => detectBackground(item.id, event.currentTarget)}
+                style={item.scale && item.scale !== 1 ? { transform: `scale(${item.scale})` } : undefined}
+                className={`absolute inset-0 h-full w-full object-contain ${
+                  index === current ? 'opacity-100' : 'opacity-0'
+                }`}
+              />
+            ),
+          )}
         </div>
       </div>
 
