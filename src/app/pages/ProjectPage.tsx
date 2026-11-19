@@ -32,6 +32,12 @@ import suspended2 from '../../imports/3289165D-B493-4FAA-A08D-C38303F66193_1_105
 import suspended3 from '../../imports/16570A98-9510-4126-83AB-0E9B3C356F5A_1_105_c.jpeg';
 import suspended4 from '../../imports/29BBFF59-06CA-40AD-885C-253E047C3B19_1_105_c.jpeg';
 
+// Désiré images
+import desire1 from '../../imports/desire-01.jpg';
+import desire2 from '../../imports/desire-02.jpg';
+import desire3 from '../../imports/desire-03.jpg';
+import desire4 from '../../imports/desire-04.jpg';
+
 // Jingumae Gate images
 import jingumae1 from '../../imports/jingumae-gate-01.jpg';
 import jingumae2 from '../../imports/jingumae-gate-02.jpg';
@@ -146,6 +152,8 @@ const at75 = (src: string): ProjectImage => ({ src, scale: 0.75 });
 const projectData: Record<string, {
   title: string;
   images: ProjectImage[];
+  /** Always use the black page / blue text theme */
+  alwaysDark?: boolean;
   background?: string;
 }> = {
   'rue-in-berlin': {
@@ -164,6 +172,11 @@ const projectData: Record<string, {
   'suspended-noon': {
     title: 'suspended noon',
     images: [suspended1, suspended2, suspended3, suspended4]
+  },
+  'desire': {
+    title: 'désiré',
+    images: [desire1, desire2, desire3, desire4],
+    alwaysDark: true
   },
   'jingumae-gate': {
     title: 'jingumae gate',
@@ -226,6 +239,7 @@ export default function ProjectPage() {
       slides={slides}
       cols={Math.max(10, slides.length)}
       rows={1}
+      alwaysDark={projectData[projectId]?.alwaysDark}
       emptyCaption={`${title} (images coming soon)`}
     />
   );
