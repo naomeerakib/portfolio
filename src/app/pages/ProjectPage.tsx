@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { useParams } from 'react-router';
 import Slideshow, { type Slide } from '../components/Slideshow';
 import { portfolioProjects } from '../data/portfolio';
-import { haikuSlides, illSeeYouSlides } from '../data/poems';
+import { haikuSlides, illSeeYouSlides, strangerSlides } from '../data/poems';
 import img1 from '../../imports/DSC01225.JPG';
 import img2 from '../../imports/DSC01227.JPG';
 import img3 from '../../imports/DSC01228.JPG';
@@ -189,6 +189,12 @@ const projectData: Record<string, {
     images: [],
     textSlides: haikuSlides,
     cols: 3
+  },
+  'instructions-on-becoming-a-stranger': {
+    title: 'instructions on becoming a stranger',
+    images: [],
+    textSlides: strangerSlides,
+    cols: 1
   },
   'desire': {
     title: 'désiré',

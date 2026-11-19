@@ -241,3 +241,37 @@ export const haikuSlides: { id: string; caption: string; content: ReactNode }[] 
   { id: 'haiku-2', caption: 'haikus and observations', content: <Poem lines={haiku2} center /> },
   { id: 'haiku-3', caption: 'haikus and observations', content: <Poem lines={haiku3} center /> },
 ];
+
+const stranger: Line[] = [
+  L('oh night'),
+  L('slim and low', 4.2),
+  L('what bewitches you?'),
+  L('a ghost, of futures not realized'),
+  L('or the ghost, of desire to be forgotten'),
+  '',
+  L('tonight you will tell her a half truth'),
+  { t: 'bury the cradle warm and', i: 3.7, gap: { after: 'bury the cradle warm', em: 3.4 } },
+  L('hoist your chin down with the ultramarine gaze'),
+  L('sing a sigh of madness and cover your damp palms with her hard-boiled face'),
+  '',
+  L('the end of your wonderland is at the edge of her bed', 7.3),
+  '',
+  L('a second to indulge in her breath, heavy and open mouthed'),
+  L('only you know that the body sleeping next to her tomorrow will be your absence'),
+  L('so you unearth yourself from the unholied sheets', 4.5),
+  L('and look at the moon lingering outside the window, unwilling to call on the sun'),
+  L('because when the sun arrives you must go and'),
+  L('leave the sweat on her spine, copper and curled'),
+  P('hush dearest'),
+  '',
+  L('tomorrow when the rain hits the window in bitter yellow notes'),
+  L('she will forgive herself'),
+  L('for the trust she had allowed wept and wept'),
+  L('the door'),
+  L('in stupendous fashion', 3.9),
+  L('is waiting for a hand that will never open it again'),
+];
+
+export const strangerSlides: { id: string; caption: string; content: ReactNode }[] = [
+  { id: 'stranger-1', caption: 'instructions on becoming a stranger', content: <Poem lines={stranger} /> },
+];
