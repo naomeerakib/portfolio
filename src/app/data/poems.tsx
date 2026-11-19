@@ -15,11 +15,11 @@ const L = (t: string, i = 0): Line => ({ t, i });
 const B = (t: string, i = 0): Line => ({ t, i, bold: true });
 const P = (t: string): Line => ({ t, plain: true });
 
-function Poem({ lines }: { lines: Line[] }) {
+function Poem({ lines, center = false }: { lines: Line[]; center?: boolean }) {
   // Scale the text so the longest poem still fits the screen without scrolling
   const fontSize = `min(15px, calc((100vh - 190px) / ${(lines.length * 1.3).toFixed(1)}))`;
   return (
-    <div className="max-h-full text-left" style={{ fontSize, lineHeight: 1.3 }}>
+    <div className={`max-h-full ${center ? 'text-center' : 'text-left'}`} style={{ fontSize, lineHeight: 1.3 }}>
       {lines.map((line, index) => {
         if (typeof line === 'string') {
           return <div key={index}>{line || ' '}</div>;
@@ -221,4 +221,23 @@ export const illSeeYouSlides: { id: string; caption: string; content: ReactNode 
   { id: 'isy-2', caption: "i'll see you when i see you", content: <Poem lines={poem2} /> },
   { id: 'isy-3', caption: "i'll see you when i see you", content: <Poem lines={poem3} /> },
   { id: 'isy-4', caption: "i'll see you when i see you", content: <Poem lines={poem4} /> },
+];
+
+const haiku1: Line[] = [P('1'), '', L('silly kinetics'), L('had you drowned heavens under'), L('my cobalt iris')];
+const haiku2: Line[] = [P('2'), '', L('willowing father'), L('seven seconds, seven suns washed'), L('to the shore at dusk')];
+const haiku3: Line[] = [
+  P('3'),
+  '',
+  L('sticky tongue and taste'),
+  L('make no haste of me in hell'),
+  L('i’m where i belong'),
+  '',
+  '',
+  L('-naomee'),
+];
+
+export const haikuSlides: { id: string; caption: string; content: ReactNode }[] = [
+  { id: 'haiku-1', caption: 'haikus and observations', content: <Poem lines={haiku1} center /> },
+  { id: 'haiku-2', caption: 'haikus and observations', content: <Poem lines={haiku2} center /> },
+  { id: 'haiku-3', caption: 'haikus and observations', content: <Poem lines={haiku3} center /> },
 ];
