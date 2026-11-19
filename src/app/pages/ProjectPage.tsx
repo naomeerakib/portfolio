@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { useParams } from 'react-router';
 import Slideshow, { type Slide } from '../components/Slideshow';
 import { portfolioProjects } from '../data/portfolio';
+import { illSeeYouSlides } from '../data/poems';
 import img1 from '../../imports/DSC01225.JPG';
 import img2 from '../../imports/DSC01227.JPG';
 import img3 from '../../imports/DSC01228.JPG';
@@ -154,6 +155,10 @@ const projectData: Record<string, {
   images: ProjectImage[];
   /** Always use the black page / blue text theme (archive and motion projects do by default) */
   alwaysDark?: boolean;
+  /** Text slides instead of images (e.g. writing) */
+  textSlides?: Slide[];
+  /** Number of hover strips (default: 10, or one per slide if more) */
+  cols?: number;
   background?: string;
 }> = {
   'rue-in-berlin': {
@@ -172,6 +177,12 @@ const projectData: Record<string, {
   'suspended-noon': {
     title: 'suspended noon',
     images: [suspended1, suspended2, suspended3, suspended4]
+  },
+  'ill-see-you-when-i-see-you': {
+    title: "i'll see you when i see you",
+    images: [],
+    textSlides: illSeeYouSlides,
+    cols: 5
   },
   'desire': {
     title: 'désiré',
@@ -223,6 +234,7 @@ export default function ProjectPage() {
 
   const slides = useMemo<Slide[]>(
     () =>
+      projectData[projectId]?.textSlides ??
       (projectData[projectId]?.images ?? []).map((image, index) => ({
         id: `${projectId}-${index}`,
         src: typeof image === 'string' ? image : image.src,
@@ -237,7 +249,7 @@ export default function ProjectPage() {
     <Slideshow
       key={projectId}
       slides={slides}
-      cols={Math.max(10, slides.length)}
+      cols={projectData[projectId]?.cols ?? Math.max(10, slides.length)}
       rows={1}
       alwaysDark={
         projectData[projectId]?.alwaysDark ??
