@@ -17,6 +17,7 @@ const slides: Slide[] = waveGalleryItems.map((item) => {
     alt: item.alt,
     caption: project?.title ?? item.projectSlug.replace(/-/g, ' '),
     href: `/${categoryRoutes[item.category]}/${item.projectSlug}`,
+    dark: item.dark,
   };
 });
 
