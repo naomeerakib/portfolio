@@ -53,7 +53,7 @@ export default function Navigation() {
             {/* Dropdown */}
             <div
               className={`
-                absolute left-0 top-full pt-[14px]
+                absolute right-0 top-full pt-[14px] text-right
                 transition-opacity duration-300 ease-out
                 ${isDesignHovered ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
               `}
@@ -85,7 +85,7 @@ export default function Navigation() {
             {/* Dropdown */}
             <div
               className={`
-                absolute left-0 top-full pt-[14px]
+                absolute right-0 top-full pt-[14px] text-right
                 transition-opacity duration-300 ease-out
                 ${isArchiveHovered ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
               `}
@@ -117,7 +117,7 @@ export default function Navigation() {
             {/* Dropdown */}
             <div
               className={`
-                absolute left-0 top-full pt-[14px]
+                absolute right-0 top-full pt-[14px] text-right
                 transition-opacity duration-300 ease-out
                 ${isMotionHovered ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
               `}

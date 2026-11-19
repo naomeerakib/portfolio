@@ -152,7 +152,7 @@ const at75 = (src: string): ProjectImage => ({ src, scale: 0.75 });
 const projectData: Record<string, {
   title: string;
   images: ProjectImage[];
-  /** Always use the black page / blue text theme (archive projects do by default) */
+  /** Always use the black page / blue text theme (archive and motion projects do by default) */
   alwaysDark?: boolean;
   background?: string;
 }> = {
@@ -241,7 +241,7 @@ export default function ProjectPage() {
       rows={1}
       alwaysDark={
         projectData[projectId]?.alwaysDark ??
-        portfolioProjects.find((p) => p.slug === projectId)?.category === 'archive'
+        ['archive', 'motion'].includes(portfolioProjects.find((p) => p.slug === projectId)?.category ?? '')
       }
       emptyCaption={`${title} (images coming soon)`}
     />

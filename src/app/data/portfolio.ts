@@ -171,17 +171,22 @@ export const portfolioProjects: PortfolioProject[] = [
     blurb: 'Unplanned encounters, fleeting subjects, and the poetics of being briefly there.',
   },
   {
-    title: 'toronto, sometime early october 2023',
-    slug: 'toronto-sometime-early-october-2023',
+    title: "i'll see you when i see you",
+    slug: 'ill-see-you-when-i-see-you',
     category: 'motion',
-    year: '2023',
-    blurb: 'A moving-image piece built from atmosphere, seasonality, and urban drift.',
+    blurb: 'A moving-image piece.',
   },
   {
-    title: 'jewels of the diaspora',
-    slug: 'jewels-of-the-diaspora',
+    title: 'haikus and observations',
+    slug: 'haikus-and-observations',
     category: 'motion',
-    blurb: 'A motion study around memory, identity, and cultural inheritance.',
+    blurb: 'A moving-image piece.',
+  },
+  {
+    title: 'instructions on becoming a stranger',
+    slug: 'instructions-on-becoming-a-stranger',
+    category: 'motion',
+    blurb: 'A moving-image piece.',
   },
 ];
 
